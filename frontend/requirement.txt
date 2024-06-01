@@ -1,0 +1,15 @@
+Fitur :
+Authentication (Login, Register, Logout)
+Beranda (carousel anime2, jadi ada bbrp anime gt, trs kalo diklik masuk ke halaman anime)
+Halaman anime (isinya sinopsis terus ada stream, kemudian episode2 nya)
+Halaman episode, kalo diklik ada sinopsis dari tiap episodenya trus video trus ada next/prev)
+Halaman Profil
+
+Requirement :
+Ada 2 user yaitu user pengguna (pengguna umum) dan user admin
+Pengguna bisa melakukan register, admin tidak
+Akun admin sudah disediakan dan didaftarkan dari awal (by default)
+Pengguna dapat mengupload anime, yang akan di approve melalui admin, admin dapat melihat approval dari pengguna.
+Admin pasti dapat mengupload dan mengelola konten (anime)
+Halaman profil hanya untuk pengguna
+Pengguna bisa liat anime tanpa login??
