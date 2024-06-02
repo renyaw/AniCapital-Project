@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const Status = new mongoose.Schema({
+const StatusSchema = new mongoose.Schema({
     proses: {
         type: String,
         required: true,
@@ -8,4 +8,4 @@ const Status = new mongoose.Schema({
     },
 });
 
-export default mongoose.model("Status", Status);
+export default mongoose.model("Status", StatusSchema);

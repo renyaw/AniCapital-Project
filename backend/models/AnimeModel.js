@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const Anime = new mongoose.Schema({
+const AnimeSchema = new mongoose.Schema({
     judul: {
         type: String,
         required: true,
@@ -12,4 +12,4 @@ const Anime = new mongoose.Schema({
 
 });
 
-export default mongoose.model("Anime", Anime);
+export default mongoose.model("Anime", AnimeSchema);
