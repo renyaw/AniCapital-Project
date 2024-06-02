@@ -3,5 +3,12 @@ import mongoose from "mongoose";
 import cors from "cors";
 
 const app = express();
+mongoose.connect('mongodb://localhost:27017/AniCapital_db');
+const db = mongoose.connection;
+db.on('error', (error) => console.log(error));
+db.once('open', () =>console.log('Database Connected...'));
 
-app.listen(5000, ()=> console.log('Server berjalan yey, janlupa gandengan...'));
+app.use(cors());
+app.use(express.json());
+
+app.listen(5000, ()=> console.log('Server berjalan yey...'));
