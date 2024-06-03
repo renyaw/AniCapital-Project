@@ -1,11 +1,11 @@
-import User from '../models/UserModel.js';
+const UserModel = require('../models/UserModel');
 
 
 // Get All User
 
-export const getUsers = async (req, res) => {
+const getUsers = async (req, res) => {
     try {
-        const users = await User.find({}).sort({createdAt: -1});
+        const users = await UserModel.find({}).sort({createdAt: -1});
         res.json(users);
     } catch (error){
         res.status(500).json({message: error.message});
@@ -13,22 +13,22 @@ export const getUsers = async (req, res) => {
 }
 
 // Get one user
-export const getUserID = async (req, res) => {
+const getUserID = async (req, res) => {
     try {
-        const users = await User.findById(req.params.id);
-        res.json(user);
+        const users = await UserModel.findById(req.params.id);
+        res.json(users);
     } catch (error){
         res.status(404).json({message: error.message});
     }
 }
 
 // Create User
-export const createUser = async (req,res) => {
+const createUser = async (req,res) => {
 
     const {username, nama , password, role} = req.body;
     try {
-        const user = await User.create({username, nama , password, role});
-        res.status(201).json(users);
+        const user = await UserModel.create({username, nama , password, role});
+        res.status(201).json(user);
     } catch (error) {
         res.status(500).json({message: error.message});
     }
