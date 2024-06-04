@@ -1,5 +1,5 @@
 const UserModel = require('../models/UserModel');
-
+const mongoose = require('mongoose');
 
 // Get All User
 
@@ -35,12 +35,40 @@ const createUser = async (req,res) => {
 }
 
 // Delete User
+const deleteUser = async (req, res) => {
+    if (!mongoose.Types.ObjectId.isValid(req.params.id)){
+        return res.status(404).json({message: error.message});
+    }
 
+    try{
+        const user = await UserModel.findOneAndDelete({_id: id});
+        res.status(201).json(user);
+    } catch (error) {
+        res.status(404).json({message: error.message});
+    }
+    
+}
 
 // Update User
+const updateUser = async (req, res) => {
+    if (!mongoose.Types.ObjectId.isValid(req.params.id)){
+        return res.status(404).json({message: error.message});
+    }
+
+    try{
+        const user = await UserModel.findOneAndUpdate({_id: id}, {
+            ...req.body
+        });
+        res.status(201).json(user);
+    } catch(error){
+        res.status(404).json({message: error.message});
+    }
+}
 
 module.exports = {
     getUsers,
     getUserID,
     createUser,
+    deleteUser,
+    updateUser,
 }
