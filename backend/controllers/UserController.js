@@ -37,7 +37,7 @@ const createUser = async (req,res) => {
 // Delete User
 const deleteUser = async (req, res) => {
     if (!mongoose.Types.ObjectId.isValid(req.params.id)){
-        return res.status(404).json({message: error.message});
+        return res.status(404).json({message: "id gaketemu"});
     }
 
     try{
@@ -52,7 +52,7 @@ const deleteUser = async (req, res) => {
 // Update User
 const updateUser = async (req, res) => {
     if (!mongoose.Types.ObjectId.isValid(req.params.id)){
-        return res.status(404).json({message: error.message});
+        return res.status(404).json({message: "id gaketemu"});
     }
 
     try{
